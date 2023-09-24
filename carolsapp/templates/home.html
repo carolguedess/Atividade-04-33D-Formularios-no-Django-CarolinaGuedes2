@@ -1,0 +1,115 @@
+<!--https://docs.djangoproject.com/en/4.2/intro/tutorial06/ -->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Carolina Oliva Brito Guedes</title>
+  <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>A moda e suas transformações</h1>
+
+  <p style="text-align: justify;">
+    A <b>moda</b> está em constante <u>mutação e atualização</u>, já que ela se transforma para adequar às novas necessidades da sociedade atual, às diferentes identidades e estilos de vida. <mark>É um reflexo cultural e de comunicação da sociedade.</mark> A moda abrange <i>inúmeros</i> elementos, tais como a imagem, padrões de beleza, cores, estética e condições climáticas.
+  </p>
+
+  <div class="img-center">
+    <img src="https://escsmagazine.escs.ipl.pt/wp-content/uploads/2021/04/70f5b4642921bcd5f9c98dd50122d36f.jpg" width="400">
+    <img src="https://mais.opovo.com.br/_midias/jpg/2020/07/15/marina2-13043179.jpg" width="300">
+  </div>
+  <h2>A moda ao longo dos anos:</h2>
+  <h3><span style="color:deeppink">Anos 50 e 60:</span></h3>
+  <p style="text-align: justify;">
+    As <strong style="color:purple">mulheres</strong> começaram a usar minis saias e vestido tubinho com cores alegres e chamativas. Já os <strong style="color:purple">homens</strong> usavam jaquetas de couro, terno e cortes estreitos colados no corpo, com cores vibrantes.
+  </p>
+  <div class="anos-center">
+    <div><img src="https://th.bing.com/th/id/OIP.oHoNzL-hyT-f64AjnlRFZwHaHX?pid=ImgDet&rs=1" width=300></div>
+    <div><img src="https://th.bing.com/th/id/R.67abccaf7ee05655ef5396f9918593b9?rik=8z79hwyYpVG4gQ&riu=http%3a%2f%2fimages2.fanpop.com%2fimages%2fphotos%2f3100000%2fGrease-grease-the-movie-3147022-1024-768.jpg&ehk=q0sdu2YZc%2bLcZOnE%2fbz50qJmJRKn5o1ThUdpLpzdKZw%3d&risl=&pid=ImgRaw&r=0" width=400></div>
+   </div> 
+
+  <h4><span style="color:deeppink">Anos 70, 80 e 90:</span></h4>
+  <p style="text-align: justify;">
+    Foi uma época de <b>diversos estilos</b>, como hippie, punk e disco. Peças com muitas cores e estampas, como tie dye, brilhos, paetês e manga bufante. 
+  </p>
+  <div class="anos2-center">
+    <div><img src="https://i.pinimg.com/736x/f9/e5/6a/f9e56a9f29eac2ef4041efeda0689dea.jpg" width=400></div>
+    <div><img src="https://i0.wp.com/www.fashionbubbles.com/wp-content/blogs.dir/1/files/2019/02/C8B4B102-E4BB-44BE-8E41-F34F69B8E4E5-scaled.jpeg?fit=1250%2C795&ssl=1" width=400></div>
+   </div> 
+
+  <h5><span style="color:deeppink">Anos 2000:</span></h5>
+  <p style="text-align: justify;">
+    Nos <strong style="color:purple">anos 2000</strong> era comum usar calça de cintura baixa, peças coloridas, echarpes finas, vestido por cima da calça, glitter, strass, jeans e blusa de bandana. 
+  </p>
+  <div class="anos3-center">
+    <div><img src="https://th.bing.com/th/id/OIP.EBvfdqDa9lfH7DWm9vdDRQHaE7?pid=ImgDet&rs=1" width=400></div>
+    <div><img src="https://claudia.abril.com.br/wp-content/uploads/2020/01/looks-vestido-calca-1.jpg?quality=85&strip=info&w=680&h=453&crop=1" width=400></div>
+   </div> 
+
+  <h6>Os maiores sucessos:</h6>
+  <!--<ol>
+    <li>Roupas chamativas</li>
+    <li>Camisa xadrez</li>
+    <li>Macacão estilo jardineira</li>
+    <li>Calça de sintura baixa</li>
+    <li>Jaqueta de couro</li>
+  </ol> -->
+  <ol>
+    {% for sucesso in Sucessos %}
+      <li>
+        {{ sucesso.title }}
+        <a href="/sucessos/uptade/{{ sucesso.id     
+  }}">Atualizar</a>
+        <a href="/sucessos/delete/{{ sucesso.id     
+  }}">Remover</a>
+      </li>
+    {% endfor %}
+  </ol>
+  <a href='/sucessos'>Adcionar novo sucesso</a>
+
+
+  <h6>O que era considerado brega e hoje faz sucesso:</h6>
+  <!--<ul>
+    <li>Roupas oversized</li>
+    <li>Mix de estampas</li>
+    <li>Mangas bufantes</li>
+    <li>Calça jeans larga</li>
+  </ul> -->
+  <ul>
+    {% for transformacao in transformation %}
+      <li>
+        {{ transformacao.title }}
+        <a href="/transformacao/uptade/{{ sucesso.id     
+  }}">Atualizar</a>
+        <a href="/transformacao/delete/{{ sucesso.id     
+  }}">Remover</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <a href='/transformacao'>Adcionar nova transformaçao</a>
+
+
+  <h6>Tabela dos meus looks preferidos: </h6>
+  <table>
+  <tr>
+    <th>Look 1                   </th>
+    <th>Look 2                   </th>
+    <th>Look 3                   </th>
+  </tr>
+  <tr>
+    <td>Monocromático            </td>
+    <td>Estampado                </td>
+    <td>Gótico                   </td>
+  </tr>
+  </table>
+
+  <h6>Bibliografia: </h6>
+  <a href="http://www.cult.ufba.br/enecult2008/14326.pdf
+"> Link para outra página</a>
+</body>
+
+</html>

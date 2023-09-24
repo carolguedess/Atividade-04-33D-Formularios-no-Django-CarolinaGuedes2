@@ -1,0 +1,15 @@
+Você tem certeza que deseja remover o sucesso "{{ sucesso.title }}"?
+
+<form method="post">
+  {% csrf_token %}
+  <input type="submit" name="confirm" value="Sim">
+  <input type="submit" value="Não">
+</form>
+
+Você tem certeza que deseja remover a transformacao "{{ transformacao.title }}"?
+
+<form method="post">
+  {% csrf_token %}
+  <input type="submit" name="confirm" value="Sim">
+  <input type="submit" value="Não">
+</form>

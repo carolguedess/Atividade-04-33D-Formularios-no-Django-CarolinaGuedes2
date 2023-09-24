@@ -1,0 +1,49 @@
+<h1>{{ action }} novo sucesso</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Título:</label>
+    <input name="title" value="{{ sucesso.title }}">
+  </div>
+
+  <div>
+    <label>Peças:</label>
+    <input name="peças" value="{{ sucesso.peças }}">
+  </div>
+
+  <div>
+    <label>Estampa:</label>
+    <input name="estampa" value="{{ sucesso.estampa }}">
+  </div>
+
+  <div>
+    <label>Gênero:</label>
+    <input name="genre" value="{{ sucesso.genre }}">
+  </div>
+
+  <input type="submit" value="Registrar">
+</form>
+
+
+<h2>{{ action }} nova transformaçao</h2>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Título:</label>
+    <input name="title" value="{{ sucesso.title }}">
+  </div>
+
+  <div>
+    <label>Frequencia:</label>
+    <input name="frequencia" value="{{ sucesso.frequencia }}">
+  </div>
+
+  <div>
+    <label>Ano:</label>
+    <input name="ano" value="{{ sucesso.ano }}">
+  </div>
+
+  <input type="submit" value="Registrar">
+</form>
